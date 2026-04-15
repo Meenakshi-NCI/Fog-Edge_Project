@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Smart Chair Dashboard</title>
+</head>
+<body>
+    <h1>Sensor Data</h1>
+    <table border="1">
+        <tr>
+            <th>Chair ID</th>
+            <th>Timestamp</th>
+            <th>Seat Pressure</th>
+            <th>Posture Angle</th>
+            <th>Heart Rate</th>
+            <th>Temperature</th>
+            <th>Movement</th>
+            <th>Alert</th>
+        </tr>
+        {% for d in data %}
+        <tr>
+            <td>{{ d.chair_id }}</td>
+            <td>{{ d.timestamp }}</td>
+            <td>{{ d.seat_pressure }}</td>
+            <td>{{ d.posture_angle }}</td>
+            <td>{{ d.heart_rate }}</td>
+            <td>{{ d.temperature }}</td>
+            <td>{{ d.movement }}</td>
+            <td>{{ d.alert if d.alert else "" }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
