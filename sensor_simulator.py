@@ -3,7 +3,7 @@ import time
 import requests
 from datetime import datetime
 
-FOG_URL = "http://100.55.95.0:5000/sensor-data"
+FOG_URL = "http://44.220.184.42:5000/sensor-data"
 
 while True:
     data = {
@@ -17,5 +17,11 @@ while True:
     }
 
     print(data)
-    requests.post(FOG_URL, json=data)
+
+    try:
+        response = requests.post(FOG_URL, json=data, timeout=5)
+        print("Fog response:", response.status_code, response.text)
+    except Exception as e:
+        print("Error sending to fog:", e)
+
     time.sleep(5)
