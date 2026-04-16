@@ -4,7 +4,6 @@ import os
 
 sqs = boto3.client('sqs')
 QUEUE_URL = 'https://sqs.us-east-1.amazonaws.com/298673434635/smartchair-queue'
-
 def lambda_handler(event, context):
     print("Received event:", event)
 

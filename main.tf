@@ -57,19 +57,19 @@ data "aws_iam_role" "labrole" {
 resource "aws_lambda_function" "ingestion" {
   function_name = "SmartChairIngestion"
   role          = data.aws_iam_role.labrole.arn
-  handler       = "lambda_function.lambda_handler"
-  runtime       = "python3.9"
+  handler       = "ingestion_lambda.lambda_handler"
+  runtime       = "python 3.14"
 
-  filename = "lambda/ingestion.zip"
+  filename = "lambda/ingestion_lambda.zip"
 }
 
 resource "aws_lambda_function" "processor" {
   function_name = "SmartChairProcessor"
   role          = data.aws_iam_role.labrole.arn
-  handler       = "lambda_function.lambda_handler"
-  runtime       = "python3.9"
+  handler       = "processor_lambda.lambda_handler"
+  runtime       = "python 3.14"
 
-  filename = "lambda/processor.zip"
+  filename = "lambda/processor_lambda.zip"
 }
 
 # ------------------------
