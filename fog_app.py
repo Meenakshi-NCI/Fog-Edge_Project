@@ -3,7 +3,7 @@ import requests
 
 app = Flask(__name__)
 
-AWS_API_URL = "https://ko01rlagql.execute-api.us-east-1.amazonaws.com/chairdataL"
+AWS_API_URL = "https://ko01rlagql.execute-api.us-east-1.amazonaws.com/chairdata"
 
 
 data_store = []
